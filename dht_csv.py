@@ -1,33 +1,33 @@
 #!/usr/bin/python
 
-# Internet de las Cosas - http://internetdelascosas.cl
+# Internet of things - Alvaro Alvarez - Ed Krystosik
 #
 # Descripcion  : Programa que permite obtener la lectura de un sensor DHT11 
 # Lenguaje     : Python
-# Autor        : Jose Zorrilla <jzorrilla@iot.cl>
 # Dependencias : Libreria de Adafruit https://github.com/adafruit/Adafruit_Python_DHT
-# Web          : http://internetdelascosas.cl/
+
 
 # Importa las librerias necesarias 
 import time
 import datetime
 import Adafruit_DHT
 
-# Log file
-log_path = "/var/log/iot/"
+# folder to use
+csv_path = "/var/log/iot/"
 
-# Configuracion del tipo de sensor AM2302
+# Sensor Type AM2302
 sensor = Adafruit_DHT.AM2302
 
 # Configuracion del puerto GPIO al cual esta conectado (GPIO 4)
 pin = 4
 
-# Escribe un archivo log en log_path con el nombre en el formato yyyy-mm-dd_dht.log
-def write_log(text):
-	log = open(log_path + datetime.datetime.now().strftime("%Y-%m-%d") + "_dht.log","a")
+# Escribe un archivo CSV en csv_path con el nombre en el formato yyyy-mm-dd_dht.CSV
+def write_csv(text):
+	csv = open(csv_path + datetime.datetime.now().strftime("%Y-%m-%d") + "_dht.csv","a")
 	line = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "," + text + "\n"
-	log.write(line)
-	log.close()
+	csv.write(line)
+	csv.close()
+
 
 # Intenta ejecutar las siguientes instrucciones, si falla va a la instruccion except
 try:
@@ -36,19 +36,17 @@ try:
 		# Obtiene la humedad y la temperatura desde el sensor 
 		humedad, temperatura = Adafruit_DHT.read_retry(sensor, pin)
 
-		# Si obtiene una lectura del sensor la registra en el archivo log
+		# Si obtiene una lectura del sensor la registra en el archivo CSV
 		if humedad is not None and temperatura is not None:
-			write_log( str(temperatura)+","+str(humedad))
-
-
+			write_csv( str(temperatura)+","+str(humedad))
 
 		else:
-			write_log('Error al obtener la lectura del sensor')
+			write_csv('Error al obtener la lectura del sensor')
 
-		# Duerme 120 segundos
+		# Wait  10 seconds before next capture
 		time.sleep(10)
 
 # Se ejecuta en caso de que falle alguna instruccion dentro del try
 except Exception,e:
-	# Registra el error en el archivo log y termina la ejecucion
-	write_log(str(e))
+	# Registra el error en el archivo csv y termina la ejecucion
+	write_csv(str(e))
