@@ -43,7 +43,7 @@ try:
 		else:
 			write_csv('Error al obtener la lectura del sensor')
 
-		# Wait  10 seconds before next capture
+		# Wait  10 seconds before next capture (or 3600 to capture once an hour)
 		time.sleep(10)
 
 # Se ejecuta en caso de que falle alguna instruccion dentro del try
