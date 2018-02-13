@@ -25,7 +25,7 @@ pin = 4
 # Escribe un archivo log en log_path con el nombre en el formato yyyy-mm-dd_dht.log
 def write_log(text):
 	log = open(log_path + datetime.datetime.now().strftime("%Y-%m-%d") + "_dht.log","a")
-	line = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " " + text + "\n"
+	line = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "," + text + "\n"
 	log.write(line)
 	log.close()
 
@@ -38,13 +38,15 @@ try:
 
 		# Si obtiene una lectura del sensor la registra en el archivo log
 		if humedad is not None and temperatura is not None:
-			write_log("DHT Sensor - Temperatura: %s" % str(temperatura))
-			write_log("DHT Sensor - Humedad:  %s" % str(humedad))
+			write_log( str(temperatura)+","+str(humedad))
+
+
+
 		else:
 			write_log('Error al obtener la lectura del sensor')
 
 		# Duerme 120 segundos
-		time.sleep(120)
+		time.sleep(10)
 
 # Se ejecuta en caso de que falle alguna instruccion dentro del try
 except Exception,e:
