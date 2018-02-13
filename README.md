@@ -1,5 +1,5 @@
-# RaspberryPi-DHT11
-Programas ejemplo de como conectar el sensor de temperatura y humedad DHT11 a una Raspberry Pi.
+# RaspberryPi-AM2302 Sensor
+Programas ejemplo de como conectar el sensor de temperatura y humedad AM2302 a una Raspberry Pi 3.
 
 ## Software Necesario
 - Librerias de desarrollo Python y cliente MySQL
@@ -12,17 +12,12 @@ Programas ejemplo de como conectar el sensor de temperatura y humedad DHT11 a un
 
 - Libreria de Adafruit Python DHT, disponible en https://github.com/adafruit/Adafruit_Python_DHT
 
-## Diagrama de conexión
-![](http://www.internetdelascosas.cl/wp-content/uploads/2017/05/Raspberry-Pi-DHT11_bb-768x374.png)
 
-
-## Tutorial e Instalación
-Pueden leer el tutorial completo para realizar este proyecto en
-
-http://www.internetdelascosas.cl/2017/05/19/raspberry-pi-conectando-un-sensor-de-temperatura-y-humedad-dht11/
 
 ## Base de datos
 El programa dht_mysql.py escribe los registros en una base de datos MySQL, para crear la tabla datos se debe usar el script SQL ubicado en la carpeta sql
 
-## Consultas y sugerencias
-Escribir a contacto@iot.cl
+
+## Basado en: http://www.internetdelascosas.cl/2017/05/19/raspberry-pi-conectando-un-sensor-de-temperatura-y-humedad-AM2302/
+
+
