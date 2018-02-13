@@ -18,6 +18,8 @@ Programas ejemplo de como conectar el sensor de temperatura y humedad AM2302 a u
 El programa dht_mysql.py escribe los registros en una base de datos MySQL, para crear la tabla datos se debe usar el script SQL ubicado en la carpeta sql
 
 
-## Basado en: http://www.internetdelascosas.cl/2017/05/19/raspberry-pi-conectando-un-sensor-de-temperatura-y-humedad-AM2302/
+## Basado en:
+
+http://www.internetdelascosas.cl/2017/05/19/raspberry-pi-conectando-un-sensor-de-temperatura-y-humedad-AM2302/
 
 
