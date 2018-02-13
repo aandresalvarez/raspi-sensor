@@ -22,4 +22,6 @@ El programa dht_mysql.py escribe los registros en una base de datos MySQL, para 
 
 http://www.internetdelascosas.cl/2017/05/19/raspberry-pi-conectando-un-sensor-de-temperatura-y-humedad-AM2302/
 
+## Run a Program On Your Raspberry Pi At Startup
 
+https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/
