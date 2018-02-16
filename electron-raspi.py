@@ -41,7 +41,7 @@ try:
             ##write_csv( str(temperatura)+","+str(humedad))
             print '{0:0.1f}\n{1:0.1f}'.format(temperatura, humedad)
         else:
-            write_csv('Error al obtener la lectura del sensor')
+            print 'Error al obtener la lectura del sensor'
 
         # Wait  10 seconds before next capture (or 3600 to capture once an hour)
        # time.sleep(10)
@@ -49,4 +49,4 @@ try:
 # Se ejecuta en caso de que falle alguna instruccion dentro del try
 except Exception,e:
     # Registra el error en el archivo csv y termina la ejecucion
-    write_csv(str(e))
+    print str(e)
